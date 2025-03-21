@@ -32,6 +32,8 @@ jobs:
       - name: Build Docker image
         run: |
             docker build -t my-image .
+            docker images 
+            docker ps
         #  docker build -t your-username/your-image-name:latest .
 
       # Push the Docker image to Docker Hub (or AWS ECR)
