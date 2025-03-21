@@ -9,6 +9,7 @@ ENV PYTHONUNBUFFERED=1 \
 FROM node:18-alpine as frontend-build
 WORKDIR /frontend
 COPY Frontend/package*.json ./
+RUN npm cache clean --force
 RUN npm install --legacy-peer-deps --verbose
 COPY Frontend/ .
 RUN npm run build
