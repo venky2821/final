@@ -37,7 +37,7 @@ COPY --from=backend-deps /usr/local/lib/python3.11/site-packages/ /usr/local/lib
 COPY Backend/ backend/
 
 # Copy frontend build
-COPY --from=frontend-build /frontend/build frontend/build/
+COPY --from=frontend-build /frontend/.next .next/
 
 # Copy necessary scripts and configurations
 COPY configs/ configs/
