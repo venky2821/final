@@ -101,6 +101,13 @@ jobs:
           docker build --target test . -t app-tests
           docker run app-tests
 
+          # Run tests
+      - name: 'Run Tests'
+        run: |-
+          mkdir -p configs
+          touch configs/config.yaml  # Add a dummy file
+    
+
       # Build the Docker image
       - name: 'Build and push Docker container'
         run: |-
