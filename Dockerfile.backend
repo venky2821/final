@@ -1,4 +1,24 @@
 FROM python:3.10
+# Use a lightweight Python image
+
+# Set working directory
+WORKDIR /app
+
+# Environment variables
+ENV PYTHONUNBUFFERED=1
+
+# Copy requirements file and install dependencies
+COPY Backend/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy backend source code
+COPY Backend /app
+
+# Expose FastAPI port
+EXPOSE 8000
+
+# Start FastAPI server with multiple workers
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4"]
 
 WORKDIR /app
 
