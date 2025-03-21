@@ -1,4 +1,3 @@
-# Backend Dockerfile (Dockerfile.backend)
 FROM python:3.10
 
 WORKDIR /app
