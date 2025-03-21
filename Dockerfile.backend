@@ -19,18 +19,3 @@ EXPOSE 8000
 
 # Start FastAPI server with multiple workers
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4"]
-
-WORKDIR /app
-
-# Copy and install dependencies
-COPY Backend/requirements.txt ./  
-RUN pip install --no-cache-dir -r requirements.txt  
-
-# Copy backend source code
-COPY Backend /app
-
-# Expose FastAPI port
-EXPOSE 8000
-
-# Start FastAPI server
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
