@@ -1,0 +1,30 @@
+# Step 1: Build the React frontend
+FROM node:18-alpine AS frontend
+
+WORKDIR /app/frontend
+COPY Frontend ./
+# RUN npm install --legacy-peer-deps
+RUN npm ci --legacy-peer-deps
+RUN npm install react react-dom react-router-dom --legacy-peer-deps
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN npm run build
+
+
+# Step 2: Set up FastAPI backend
+FROM python:3.10 AS backend
+
+WORKDIR /app
+COPY Backend/requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy backend code
+COPY Backend /app
+
+# Copy frontend build to backend's static folder
+COPY --from=frontend /app/frontend/.next /app/static
+
+# Expose FastAPI's port
+EXPOSE 8000
+
+# Command to run FastAPI with Uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
