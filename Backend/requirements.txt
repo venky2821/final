@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+email-validator
+sqlalchemy
+reportlab
+pyclamd
+PyJWT
+prometheus_fastapi_instrumentator
+slowapi
