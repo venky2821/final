@@ -1,0 +1,8 @@
+#Dockerfile for Prometheus
+FROM prom/prometheus
+
+COPY prometheus.yml /etc/prometheus/prometheus.yml
+
+EXPOSE 9090  # Expose port 9090 for Prometheus metrics scraping
+
+CMD ["--config.file=/etc/prometheus/prometheus.yml"]
