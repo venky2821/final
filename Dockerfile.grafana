@@ -1,5 +1,5 @@
 # Use the official Grafana image as the base
-FROM grafana/grafana:latest
+FROM grafana/grafana
 
 # Expose port 3001 for the Grafana web interface
 EXPOSE 3001
