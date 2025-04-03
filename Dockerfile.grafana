@@ -1,0 +1,7 @@
+FROM grafana/grafana:latest
+
+# Set custom login credentials
+ENV GF_SECURITY_ADMIN_USER=admin_user
+ENV GF_SECURITY_ADMIN_PASSWORD=admin_pass
+
+EXPOSE 3000
