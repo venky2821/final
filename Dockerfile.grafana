@@ -8,5 +8,3 @@ EXPOSE 3000
 ENV GF_SECURITY_ADMIN_USER=admin_user
 ENV GF_SECURITY_ADMIN_PASSWORD=admin_pass
 
-# Start Grafana
-CMD ["/bin/grafana-server"]
