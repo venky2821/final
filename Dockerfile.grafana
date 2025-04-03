@@ -1,7 +1,12 @@
+# Use the official Grafana image as the base
 FROM grafana/grafana:latest
 
-# Set custom login credentials
+# Expose port 3000 for the Grafana web interface
+EXPOSE 3000
+
+# Optional: Set custom environment variables for Grafana login
 ENV GF_SECURITY_ADMIN_USER=admin_user
 ENV GF_SECURITY_ADMIN_PASSWORD=admin_pass
 
-EXPOSE 3000
+# Start Grafana
+CMD ["/bin/grafana-server"]
