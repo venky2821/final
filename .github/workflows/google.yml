@@ -29,12 +29,17 @@ jobs:
         run: |
                docker build -t venky2821/my-backend:latest -f Dockerfile.backend .
                docker build -t venky2821/my-frontend:latest -f Dockerfile.frontend .
+               docker build -t venky2821/prometheous:latest -f Dockerfile.prometheous .
+               docker build -t venky2821/grafana:latest -f Dockerfile.grafana .
+               
           
       # Push the Docker image to Docker Hub (or AWS ECR)
       - name: Push Docker images
         run: |
           docker push venky2821/my-backend:latest
           docker push venky2821/my-frontend:latest
+          docker push venky2821/prometheous:latest
+          docker push venky2821/grafana:latest
 
       # Deploy the image (optional step, depends on the platform)
       # Example for deploying to AWS ECS, replace with your platform-specific steps
