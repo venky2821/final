@@ -1,7 +1,7 @@
 # Use the official Grafana image as the base
 FROM grafana/grafana:latest
 
-# Expose port 3000 for the Grafana web interface
+# Expose port 3001 for the Grafana web interface
 EXPOSE 3001
 
 # Optional: Set custom environment variables for Grafana login
