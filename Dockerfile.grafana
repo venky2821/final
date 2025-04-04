@@ -3,8 +3,3 @@ FROM grafana/grafana
 
 # Expose port 3001 for the Grafana web interface
 EXPOSE 3001
-
-# Optional: Set custom environment variables for Grafana login
-ENV GF_SECURITY_ADMIN_USER=admin_user
-ENV GF_SECURITY_ADMIN_PASSWORD=admin_pass
-
