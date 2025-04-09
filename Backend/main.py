@@ -63,7 +63,6 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # Attach the Prometheus instrumentator
-Instrumentator().instrument(app).expose(app)
 
 app.include_router(auth_router)
 app.include_router(reporting_router)
@@ -72,7 +71,7 @@ app.include_router(ordering_router)
 app.include_router(batch_router)
 app.include_router(review_router)
 app.include_router(product_router)
-
+Instrumentator().instrument(app).expose(app)
 
 # Create photos directory if it doesn't exist and mount it for static files
 PHOTOS_DIR = "photos"
