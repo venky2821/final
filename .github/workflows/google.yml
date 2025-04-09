@@ -30,7 +30,7 @@ jobs:
         run: |
                docker build -t venky2821/my-backend:latest -f Dockerfile.backend .
                docker build -t venky2821/my-frontend:latest -f Dockerfile.frontend .
-               docker build -t venky2821/prometheous:latest -f Dockerfile.prometheous .
+               docker build -t venky2821/prometheous:latest -f Dockerfile.prometheus .
                docker build -t venky2821/grafana:latest -f Dockerfile.grafana .
                
           
@@ -39,7 +39,7 @@ jobs:
         run: |
           docker push venky2821/my-backend:latest
           docker push venky2821/my-frontend:latest
-          docker push venky2821/prometheous:latest
+          docker push venky2821/prometheus:latest
           docker push venky2821/grafana:latest
 
       # Deploy the image (optional step, depends on the platform)
