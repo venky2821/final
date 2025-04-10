@@ -42,7 +42,7 @@ jobs:
           docker push venky2821/grafana:latest
 
       # Deploy the image (optional step, depends on the platform)
-      # Example for deploying to AWS ECS, replace with your platform-specific steps
+      # Example for deploying to AWS ECS, replace with your platform-specific step
      # - name: Deploy to AWS ECS
       #  run: |
           # Example ECS deployment script
