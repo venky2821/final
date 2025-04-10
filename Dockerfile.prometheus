@@ -1,5 +1,5 @@
 # Use the official Prometheus image
-FROM prom/prometheus
+FROM prometheus
 
 # Copy configuration file
 COPY prometheus.yml /etc/prometheus/prometheus.yml
