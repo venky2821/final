@@ -8,4 +8,4 @@ COPY prometheus.yml /etc/prometheus/prometheus.yml
 EXPOSE 9090
 
 # Start Prometheus with the specified config file
-CMD ["--config.file=/etc/prometheus/prometheus.yml"]
+CMD ["/bin/prometheus", "--config.file=/etc/prometheus/prometheus.yml"]
